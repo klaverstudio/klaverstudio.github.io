@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Gallery</title>
+	 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css'>
+	 <link rel="stylesheet" href="./style.css">
+	 <script src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
+	 <!-- menu -->
+	 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+	 <!-- inner menu -->
+	 <link rel="stylesheet" type="text/css" href="menu.css">
+	 <!-- aos -->
+	 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	 <!-- LINE REVEAL -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+	 <!-- menu -->
+	 <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+	 <!-- change cursor + mouse move -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+
+	 <link rel="stylesheet" type="text/css" href="gallery.css" />	 
+  <!-- Magnific Popup CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+	</head>
+	<body class="loading">
+		<!-- mouse -->
+		<div class="cursor"></div>
+		<div class="cursor-follower"></div>
+		  <!-- menu -->
+		<div class="menu-open"> <i class="fas fa-bars"></i> </div>
+	  
+		<div class="nav-container">
+		  <div class="menu-close"><i class="fas fa-times"></i></div>
+		  <main>
+			<div class="stack-wrap" aria-hidden="true">
+			   <div class="stack" id="stack-1"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+			   <div class="stack" id="stack-2"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/83/23/d3/8323d371447cf1063d3fcb3bf1b35618.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/e1/b2/4b/e1b24b51f57ccaa267a53cb964e24ffe.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/02/9e/22/029e22cd912de65212c2600926f24a67.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/2f/92/df/2f92df2e9bee103a6939981b29a488b1.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/42/96/da/4296da94ca13d156ecdc65299743ca9f.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/9f/c0/c0/9fc0c0cd1192c2c72c787fc4bb98a63f.jpg" alt="Some image"> </div>
+			   <div class="stack" id="stack-3"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+			   <div class="stack" id="stack-4"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/83/23/d3/8323d371447cf1063d3fcb3bf1b35618.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/e1/b2/4b/e1b24b51f57ccaa267a53cb964e24ffe.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/02/9e/22/029e22cd912de65212c2600926f24a67.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/2f/92/df/2f92df2e9bee103a6939981b29a488b1.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/42/96/da/4296da94ca13d156ecdc65299743ca9f.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/9f/c0/c0/9fc0c0cd1192c2c72c787fc4bb98a63f.jpg" alt="Some image"> </div>
+			   <div class="stack" id="stack-5"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+	  
+			</div>
+			<nav class="menu menu--open"> 
+				<a class="menu__item " data-stack="stack-1" data-content="content-1" >Trang chủ</a> 
+			   <a  class="menu__item " data-stack="stack-2" data-content="content-2">Về chúng tôi</a> 
+			   <a style="cursor: not-allowed;" class="menu__item" data-stack="stack-3" data-content="content-3">Tin tức</a> 
+			   <a class="menu__item active" data-stack="stack-4" data-content="content-4">Thư viện</a> 
+			   <a class="menu__item" data-stack="stack-5" data-content="content-5">Liên hệ</a> 
+	   
+		   </nav>
+			<section class="content-wrap">
+			   <div class="content" id="content-1">
+				  <h2 class="content__title ">Trang chủ</h2>
+				  <a href="index.html" class="menubtn link link--carpo">Xem thêm</a>
+				  <p class="content__text"> Klaver Studio là thương hiệu đi đầu trong lĩnh vực Photography dành cho tất cả đối tượng khách hàng cá nhân và doanh nghiệp.
+	  
+				   </p>
+			   </div>
+			   <div class="content" id="content-2">
+				  <h2  class="content__title">Về chúng tôi</h2>
+					  
+				  <a href="about.html" class="menubtn link link--carpo">Xem thêm</a>
+	  
+				  <p  class="content__text">
+					Hơn 7 năm hoạt động trong lĩnh vực chụp ảnh cưới, Klaver Studio đã và đang phát triển với hệ thống chi nhánh toàn quốc trải dài từ Bắc vào Nam, với hơn 500 nhân sự bao gồm nhiếp ảnh gia chuyên nghiệp, make-up artist nổi tiếng và đội ngũ designer với công nghệ blend màu độc quyền </p>
+			   </div>
+			   <div class="content" id="content-3">
+				<h2 class="content__title">Tin tức</h2>
+					  
+				<a href="" class="menubtn link link--carpo">Xem thêm</a>
+	  
+				<p  class="content__text">
+				  Cập nhật những bài báo, tin tức và  các thông tin khuyến mãi ở đây </p>
+			   </div>
+			   <div class="content" id="content-4">
+				<h2 class="content__title"> Thư viện</h2>
+				<a href="gallery.html" class="menubtn link link--carpo">Xem thêm</a>
+				<p class="content__text"> Tổng hợp tất cả các album hình ảnh của khách hàng như album ảnh cưới, ảnh bé, ảnh chụp gia đình, ảnh nghệ thuật </p>
+			 </div>
+			   <div class="content" id="content-5">
+				  <h2 class="content__title">Liên hệ</h2>
+				  <a href="contact.html" class="menubtn link link--carpo">Xem thêm</a>
+				  <p class="content__text"> Bạn có một thông điệp cần truyền tải, bạn cần một bộ ảnh có concept và ý nghĩa. Hãy để chúng tôi thực thi nó. </p>
+			   </div>
+	  
+			   <button class="close unbutton"><span class="close__cross"></span><i class="fas fa-long-arrow-alt-left"></i><span></span></button> 
+			</section>
+			<svg class="circle" vector-effect="non-scaling-stroke" width="1600" height="1600">
+			   <circle vector-effect="non-scaling-stroke" cx="800" cy="800" r="330" data-svg-origin="800 800" style="transform-origin:0 0"/>
+			</svg>
+		 </main>
+		 
+		</div>
+  
+		<div class="container">
+			<div class="headergl">
+		
+			 <section id="trail"> 
+			 <div class="imgg-1 imgg"></div>
+			 <div class="imgg-2 imgg"></div>
+			 <div class="imgg-3 imgg"></div>
+			 <div class="imgg-4 imgg"></div>
+			 <div class="imgg-5 imgg"></div>
+			
+			</section>
+			<section id="about">
+				<div class="wrapper">
+					<p class="gltext" data-aos="fade-up"
+					data-aos-duration="2000"> Tổng hợp </p>
+				   <div class="line glheader">
+					  <span > Album ảnh</span>
+				   </div>
+				   <p class="gltext2" data-aos="fade-up"
+				   data-aos-duration="2000"> - KLAVER STUDIO</p>
+			
+				</div>
+			 </section>
+		</div>
+			<div class="nav-bar">
+				<a href="index.html" ><p class="logo"> Klaver </p></a>
+				<ul>
+				  
+				 <li> <a href="index.html" class="link link--metis">
+				  <span>Trang chủ</span>
+				</a></li>
+				 <li> <a href="about.html" class="link link--metis">
+				  <spa> Giới thiệu </spa>
+				</a>
+				 <li> <a href="gallery.html" class="link link--metis activepage">
+				  <spa> Thư viện </spa>
+				</a>
+				  </li>
+				 <li> <a href="contact.html"  class="link link--metis">
+				  <span>Liên hệ</span>
+				</a>
+				 
+				</a>
+				  </li>
+			  
+			  
+			  
+				  
+				</ul>
+			  </div>
+			<div data-scroll>
+			<hr class="main-hr mg">
+				<div class="gallery">
+					<div class="stick" >
+						<p class="list active" data-filter="all"> Tất cả </p>
+						
+						<p class="list" data-filter="art">Nghệ thuật </p>
+						<p class="list" data-filter="cuoi">Ảnh cưới</p>
+						<p class="list" data-filter="fam">Ảnh gia đình</p>
+						<p class="list" data-filter="bb">Em bé</p>
+						<p class="list" data-filter="pf">Chân dung</p>
+					</div>
+			
+					<div class="items-container">
+			
+						<div class="items cuoi" >
+							<a href="https://i.pinimg.com/564x/69/25/1b/69251b71f3531c2d815661a0200122e6.jpg">
+								<img src="https://i.pinimg.com/564x/69/25/1b/69251b71f3531c2d815661a0200122e6.jpg" >
+							</a>
+						</div>
+				
+			
+						<div class="items art" >
+							<a href="https://i.pinimg.com/564x/fd/d0/ce/fdd0ced16f5df4ffbdee15c62085c244.jpg">
+								<img src="https://i.pinimg.com/564x/fd/d0/ce/fdd0ced16f5df4ffbdee15c62085c244.jpg" >
+							</a>
+						</div>
+			
+						<div class="items bb">
+							<a href="https://i.pinimg.com/564x/79/a2/e5/79a2e59a8cdc786d67bdb71f5400d26b.jpg">
+								<img src="https://i.pinimg.com/564x/79/a2/e5/79a2e59a8cdc786d67bdb71f5400d26b.jpg" >
+							</a>
+						</div>
+			
+						<div class="items fam">
+							<a href="https://i.pinimg.com/564x/02/35/d4/0235d456f8fdd2c97f6613152f56e67d.jpg">
+								<img src="https://i.pinimg.com/564x/02/35/d4/0235d456f8fdd2c97f6613152f56e67d.jpg" >
+							</a>
+						</div>
+						<div class="items pf" >
+							<a href="https://i.pinimg.com/564x/82/14/f9/8214f9fea6f819ba7d20d263b6a67ca9.jpg">
+								<img src="https://i.pinimg.com/564x/82/14/f9/8214f9fea6f819ba7d20d263b6a67ca9.jpg" >
+							</a>
+						</div>
+						<div class="items cuoi">
+							<a href="https://i.pinimg.com/564x/38/fd/35/38fd3523dc2f7f3bdeee53778448048f.jpg">
+								<img src="https://i.pinimg.com/564x/38/fd/35/38fd3523dc2f7f3bdeee53778448048f.jpg" >
+							</a>
+						</div>
+						<div class="items pf">
+							<a href="https://i.pinimg.com/564x/99/a6/30/99a630f99aaa39f7da0774814283ff41.jpg">
+								<img src="https://i.pinimg.com/564x/99/a6/30/99a630f99aaa39f7da0774814283ff41.jpg" >
+							</a>
+						</div>
+			
+						<div class="items art">
+							<a href="https://i.pinimg.com/564x/a6/29/b9/a629b94add2592d9a4a1e42e22ba60f5.jpg">
+								<img src="https://i.pinimg.com/564x/a6/29/b9/a629b94add2592d9a4a1e42e22ba60f5.jpg" >
+							</a>
+						</div>
+			
+						<div class="items bb">
+							<a href="https://i.pinimg.com/564x/7d/dc/b1/7ddcb104eb9c05719ce8ad52925dffa3.jpg">
+								<img src="https://i.pinimg.com/564x/7d/dc/b1/7ddcb104eb9c05719ce8ad52925dffa3.jpg" >
+							</a>
+						</div>
+			
+						<div class="items art">
+							<a href="https://i.pinimg.com/564x/fd/cd/82/fdcd82661fda7ddbe7631e55882cf195.jpg">
+								<img src="https://i.pinimg.com/564x/fd/cd/82/fdcd82661fda7ddbe7631e55882cf195.jpg" >
+							</a>
+						</div>
+						<div class="items pf">
+							<a href="https://i.pinimg.com/564x/ec/7f/0c/ec7f0cdfe9219eabd1bc91c89e8ef88d.jpg">
+								<img src="https://i.pinimg.com/564x/ec/7f/0c/ec7f0cdfe9219eabd1bc91c89e8ef88d.jpg" >
+							</a>
+						</div>
+			
+						<div class="items cuoi">
+							<a href="https://i.pinimg.com/564x/ab/11/64/ab1164c7d5167dac38eb7f6793d230b2.jpg">
+								<img src="https://i.pinimg.com/564x/ab/11/64/ab1164c7d5167dac38eb7f6793d230b2.jpg" >
+							</a>
+						</div>
+			
+						<div class="items art">
+							<a href="https://i.pinimg.com/564x/80/d2/17/80d21736b4e1813a89c71ad4ba61c4f1.jpg">
+								<img src="https://i.pinimg.com/564x/80/d2/17/80d21736b4e1813a89c71ad4ba61c4f1.jpg" >
+							</a>
+						</div>
+			
+						<div class="items bb">
+							<a href="https://i.pinimg.com/564x/41/1d/d1/411dd1f92eae1accf6de6f6a18a6dc38.jpg">
+								<img src="https://i.pinimg.com/564x/41/1d/d1/411dd1f92eae1accf6de6f6a18a6dc38.jpg" >
+							</a>
+						</div>
+			
+						<div class="items fam">
+							<a href="https://i.pinimg.com/564x/e6/a7/32/e6a7327fadde6f2e4350e12e6f3603b6.jpg">
+								<img src="https://i.pinimg.com/564x/e6/a7/32/e6a7327fadde6f2e4350e12e6f3603b6.jpg" >
+							</a>
+						</div>
+						<div class="items pf">
+							<a href="https://i.pinimg.com/564x/00/23/fd/0023fd52d0f9f23971b0d99db888edae.jpg">
+								<img src="https://i.pinimg.com/564x/00/23/fd/0023fd52d0f9f23971b0d99db888edae.jpg" >
+							</a>
+						</div>
+			
+						<div class="items fam">
+							<a href="https://i.pinimg.com/564x/7b/b0/62/7bb0625ec77ca7d904ab2997489da44f.jpg">
+								<img src="https://i.pinimg.com/564x/7b/b0/62/7bb0625ec77ca7d904ab2997489da44f.jpg" >
+							</a>
+						</div>
+			
+						<div class="items cuoi">
+							<a href="https://i.pinimg.com/564x/f3/a3/9d/f3a39d7025e7ff6580d128d4ec4f95c2.jpg">
+								<img src="https://i.pinimg.com/564x/f3/a3/9d/f3a39d7025e7ff6580d128d4ec4f95c2.jpg" >
+							</a>
+						</div>
+			
+						<div class="items art">
+							<a href="https://i.pinimg.com/564x/7d/e0/c6/7de0c66dd0bba30a1decd4f170858966.jpg">
+								<img src="https://i.pinimg.com/564x/7d/e0/c6/7de0c66dd0bba30a1decd4f170858966.jpg">
+							</a>
+						</div>
+			
+						<div class="items bb">
+							<a href="https://i.pinimg.com/564x/73/80/a7/7380a7bdafdc2e8509471bc628203deb.jpg">
+								<img src="https://i.pinimg.com/564x/73/80/a7/7380a7bdafdc2e8509471bc628203deb.jpg" >
+							</a>
+						</div>
+			
+						<div class="items fam">
+							<a href="https://i.pinimg.com/564x/f0/93/21/f09321b5813f00ae23706417630fa802.jpg">
+								<img src="https://i.pinimg.com/564x/f0/93/21/f09321b5813f00ae23706417630fa802.jpg" >
+							</a>
+						</div>
+			
+						
+						<div class="items pf">
+							<a href="https://i.pinimg.com/564x/d3/d3/ef/d3d3effb7c3d43b0af22b7b1984b559e.jpg">
+								<img src="https://i.pinimg.com/564x/d3/d3/ef/d3d3effb7c3d43b0af22b7b1984b559e.jpg" >
+							</a>
+						</div>
+						<div class="items fam">
+							<a href="https://i.pinimg.com/564x/75/9f/07/759f073930c5af120081ba8f2d036164.jpg">
+								<img src="https://i.pinimg.com/564x/75/9f/07/759f073930c5af120081ba8f2d036164.jpg" >
+							</a>
+						</div>
+			
+						<div class="items cuoi">
+							<a href="https://i.pinimg.com/564x/9b/b1/00/9bb1006de027f1815eb057bbb4aabc6b.jpg">
+								<img src="https://i.pinimg.com/564x/9b/b1/00/9bb1006de027f1815eb057bbb4aabc6b.jpg" >
+							</a>
+						</div>
+			
+					</div>
+				</div>
+				<hr class="main-hr">
+				<section id="mail">
+				   <p > Bạn <br> đang cần <br> một bộ ảnh ?</p>
+				   <p  data-scroll data-scroll-speed="1" data-scroll-delay="0.2" > Hãy để chúng tôi thực thi nó. Xin vui lòng email thông tin dự án của bạn về địa chỉ như sau: </p>
+				   <p> <a style="color: #f1e4d6;" class="link link--metis"> klaverstudio@gmail.com </a></p>
+				   <img src="
+					  https://adrienlaurent.fr/static/img/brush-mail.svg">
+				</section>
+				
+			</div>
+
+			<div class="footer aboutft">
+				<hr class="main-hr ">
+				<div class="f1">
+			  
+			  <p class="logo-f"> <a href="index.html" style="color: #f1e4d6">Klaver<br> Studio </a ></p>
+			  <p class="address"> 778/10 Nguyễn Kiệm, Phú Nhuận, TPHCM <br>  klaverstudio@gmail.com<br>1800 6325  </p>
+			  <div class="totop">
+			   
+				<p> Lên đầu </p>
+				<div class="topicon"> 
+				  <a href="#top"><svg><path d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z"></path><path d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z"></path><path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"></path></svg>
+			  </a> </div> 
+			  </div>
+			  
+				</div>
+				<hr class="main-hr">
+				  <div class="contact"><p> <a href="contact.html" >Liên hệ </a></p></div>
+				  <hr class="main-hr">
+				  <div class="f2">
+					<p> @2021</p>
+					<div class="sns">
+					 
+						<a href="https://www.facebook.com/phnga24/" target="_blank" class="link link--carpo" >Facebook</a>
+				
+					 
+						<a href="https://www.instagram.com/jadengaa/" target="_blank" class="link link--carpo" >Instagram</a>
+					</a>
+				
+					
+						<a href="#" class="link link--carpo" >Behance</a>
+					</a>
+				 
+					</div>
+					
+					
+					<p> By Nga Pham</p>
+				  </div>
+				   
+			  </div>
+			  
+  
+</div>
+	
+    <!-- JQuery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Magnific Popup JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".list").click(function () {
+
+                let value = $(this).attr("data-filter");
+
+                if (value == "all") {
+                    $(".items").show(1000);
+                }
+                else {
+                    $(".items").not("." + value).hide(1000);
+                    $(".items").filter("." + value).show(1000);
+                }
+
+                $(".list").removeClass("active");
+                $(this).addClass("active");
+            });
+
+
+            $('.items-container').magnificPopup({
+                delegate: 'a', // child items selector, by clicking on it popup will open
+                type: 'image',
+                // other options
+
+                gallery: {
+                    enabled: true, // set to true to enable gallery
+
+                    preload: [0, 2], // read about this option in next Lazy-loading section
+
+                    navigateByImgClick: true,
+
+                    arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+
+                    tPrev: 'Previous (Left arrow key)', // title for left button
+                    tNext: 'Next (Right arrow key)', // title for right button
+                    tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
+                },
+
+                mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+                zoom: {
+                    enabled: true, // By default it's false, so don't forget to enable it
+
+                    duration: 300, // duration of the effect, in milliseconds
+                    easing: 'ease-in-out', // CSS transition easing function
+
+                    // The "opener" function should return the element from which popup will be zoomed in
+                    // and to which popup will be scaled down
+                    // By defailt it looks for an image tag:
+                    opener: function (openerElement) {
+                        // openerElement is the element on which popup was initialized, in this case its <a> tag
+                        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+                        return openerElement.is('img') ? openerElement : openerElement.find('img');
+                    }
+                }
+            });
+        });
+
+    </script>
+
+<script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>
+<script  src="js/script.js"></script>
+<!-- menu -->
+<script>
+   var t1 = new TimelineMax({ paused: true });
+   
+   t1.to(".nav-container", 1, {
+   left: 0,
+   ease: Expo.easeInOut,
+   });
+   
+   t1.staggerFrom(
+   ".menu > div",
+   0.8,
+   { y: 100, opacity: 0, ease: Expo.easeOut },
+   "0.1",
+   "-=0.4"
+   );
+   
+   t1.staggerFrom(
+   ".socials",
+   0.8,
+   { y: 100, opacity: 0, ease: Expo.easeOut },
+   "0.4",
+   "-=0.6"
+   );
+   
+   t1.reverse();
+   $(document).on("click", ".menu-open", function () {
+   t1.reversed(!t1.reversed());
+   });
+   $(document).on("click", ".menu-close", function () {
+   t1.reversed(!t1.reversed());
+   });
+</script>
+<!-- inner menu -->
+<script src="js/menu.js"></script> 
+<!-- hoverr img -->
+<script src="ImageRevealHover-master/js/charming.min.js"></script>
+<script src="ImageRevealHover-master/js/imagesloaded.pkgd.min.js"></script>
+<script src="ImageRevealHover-master/js/TweenMax.min.js"></script>
+<script src="ImageRevealHover-master/js/demo.js"></script>
+
+<!-- mouse -->
+<script>
+   var cursor = $(".cursor"),
+	   follower = $(".cursor-follower");
+   
+   var posX = 0,
+	   posY = 0,
+	   mouseX = 0,
+	   mouseY = 0;
+   
+   TweenMax.to({}, 0.016, {
+	   repeat: -1,
+	   onRepeat: function() {
+		   posX += (mouseX - posX) / 9;
+		   posY += (mouseY - posY) / 9;
+   
+		   TweenMax.set(follower, {
+			   css: {
+				   left: posX - 20,
+				   top: posY - 20
+			   }
+		   });
+   
+		   TweenMax.set(cursor, {
+			   css: {
+				   left: mouseX,
+				   top: mouseY
+			   }
+		   });
+	   }
+   });
+   
+   $(document).on("mousemove", function(e) {
+	   mouseX = e.pageX;
+	   mouseY = e.pageY;
+   });
+   
+   $(".portfolio-item img").on("mouseenter", function() {
+	   cursor.addClass("active");
+	   follower.addClass("active");
+   });
+   
+   $(".portfolio-item img").on("mouseleave", function() {
+	   cursor.removeClass("active");
+	   follower.removeClass("active");
+   });
+</script>
+<!-- LINE REVEAL -->
+<script>
+   const textrev = gsap.timeline();
+   
+   textrev.from(".line span", 3, {
+	   y: 200,
+	   ease: "power4.out",
+	   delay: 0,
+	   skewY: 10,
+	   stagger: {
+		   amount: 0.4,
+	   },
+   });
+</script>
+
+<!-- img trail -->
+    <script>
+         const img1 = document.querySelector(".imgg-1");
+         const img2 = document.querySelector(".imgg-2");
+         const img3 = document.querySelector(".imgg-3");
+         const img4 = document.querySelector(".imgg-4");
+         const img5 = document.querySelector(".imgg-5");
+         
+         document.addEventListener("mousemove", e => {
+           img1.setAttribute(
+             "style",
+             "top :" + (e.pageY - 225) + "px; left: " + (e.pageX - 200) + "px"
+           );
+           img2.setAttribute(
+             "style",
+             "top :" + (e.pageY - 225) + "px; left: " + (e.pageX - 200) + "px"
+           );
+           img3.setAttribute(
+             "style",
+             "top :" + (e.pageY - 225) + "px; left: " + (e.pageX - 200) + "px"
+           );
+           img4.setAttribute(
+             "style",
+             "top :" + (e.pageY - 225) + "px; left: " + (e.pageX - 200) + "px"
+           );
+           img5.setAttribute(
+             "style",
+             "top :" + (e.pageY - 225) + "px; left: " + (e.pageX - 200) + "px"
+           );
+         });
+</script>
+
+      <!-- aos -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+
+
+
+	</body>
+</html>

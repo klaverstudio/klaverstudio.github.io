@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en" >
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title> demo</title>
+      <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css'>
+      <link rel="stylesheet" href="./style.css">
+      <script src="https://kit.fontawesome.com/cb8f931045.js" crossorigin="anonymous"></script>
+      <!-- menu -->
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+      <!-- inner menu -->
+      <link rel="stylesheet" type="text/css" href="menu.css">
+      <!-- LINE REVEAL -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
+      <!-- page reveal -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <!-- rotate circle -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+      <!-- button hover -->
+      <link rel="stylesheet" type="text/css" href="ButtonHoverStyles-main/css/base.css" />
+      <!-- aos -->
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <!-- draggable img -->
+      <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+      <!-- change cursor + mouse move -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+      <!-- accord -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+      <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+   <body>
+      <!-- mouse -->
+      <div class="cursor"></div>
+      <div class="cursor-follower"></div>
+      <!-- menu -->
+      <div class="menu-open"> <i class="fas fa-bars"></i> </div>
+      <div class="nav-container">
+         <div class="menu-close"><i class="fas fa-times"></i></div>
+         <main>
+            <div class="stack-wrap" aria-hidden="true">
+               <div class="stack" id="stack-1"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+               <div class="stack" id="stack-2"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/83/23/d3/8323d371447cf1063d3fcb3bf1b35618.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/e1/b2/4b/e1b24b51f57ccaa267a53cb964e24ffe.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/02/9e/22/029e22cd912de65212c2600926f24a67.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/2f/92/df/2f92df2e9bee103a6939981b29a488b1.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/42/96/da/4296da94ca13d156ecdc65299743ca9f.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/9f/c0/c0/9fc0c0cd1192c2c72c787fc4bb98a63f.jpg" alt="Some image"> </div>
+               <div class="stack" id="stack-3"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+               <div class="stack" id="stack-4"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/83/23/d3/8323d371447cf1063d3fcb3bf1b35618.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/e1/b2/4b/e1b24b51f57ccaa267a53cb964e24ffe.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/02/9e/22/029e22cd912de65212c2600926f24a67.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/2f/92/df/2f92df2e9bee103a6939981b29a488b1.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/42/96/da/4296da94ca13d156ecdc65299743ca9f.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/9f/c0/c0/9fc0c0cd1192c2c72c787fc4bb98a63f.jpg" alt="Some image"> </div>
+               <div class="stack" id="stack-5"> <img class="stack__img" src="https://i.pinimg.com/564x/22/73/62/22736294e29f9319ee2556d68414ee11.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/13/a6/81/13a681fcdb018940b6b4933775bdc8d9.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg"  alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg" alt="Some image"> <img class="stack__img" src="https://i.pinimg.com/564x/74/24/bd/7424bd44dbb584297f6745dc55cc9ffc.jpg"> </div>
+            </div>
+            <nav class="menu menu--open"> 
+               <a class="menu__item active" data-stack="stack-1" data-content="content-1" >Trang chủ</a> 
+               <a  class="menu__item" data-stack="stack-2" data-content="content-2">Về chúng tôi</a> 
+               <a class="menu__item" data-stack="stack-3" data-content="content-3">Tin tức</a> 
+               <a  class="menu__item" data-stack="stack-4" data-content="content-4">Thư viện</a> 
+               <a class="menu__item" data-stack="stack-5" data-content="content-5">Liên hệ</a> 
+            </nav>
+            <section class="content-wrap">
+               <div class="content" id="content-1">
+                  <h2 class="content__title ">Trang chủ</h2>
+                  <a class="menubtn link link--carpo">Xem thêm</a>
+                  <p class="content__text"> Klaver Studio là thương hiệu đi đầu trong lĩnh vực Photography dành cho tất cả đối tượng khách hàng cá nhân và doanh nghiệp.
+                  </p>
+               </div>
+               <div class="content" id="content-2">
+                  <h2 class="content__title">Về chúng tôi</h2>
+                  <a href="about.html" class="menubtn link link--carpo">Xem thêm</a>
+                  <p  class="content__text">
+                     Hơn 7 năm hoạt động trong lĩnh vực chụp ảnh cưới, Klaver Studio đã và đang phát triển với hệ thống chi nhánh toàn quốc trải dài từ Bắc vào Nam, với hơn 500 nhân sự bao gồm nhiếp ảnh gia chuyên nghiệp, make-up artist nổi tiếng và đội ngũ designer với công nghệ blend màu độc quyền 
+                  </p>
+               </div>
+               <div class="content" id="content-3">
+                  <h2 class="content__title">Tin tức</h2>
+                  <a href="" class="menubtn link link--carpo">Xem thêm</a>
+                  <p  class="content__text">
+                     Cập nhật những bài báo, tin tức và các thông tin khuyến mãi ở đây 
+                  </p>
+               </div>
+               <div class="content" id="content-4">
+                  <h2 class="content__title"> Thư viện</h2>
+                  <a href="gallery.html" class="menubtn link link--carpo">Xem thêm</a>
+                  <p class="content__text"> Tổng hợp tất cả các album hình ảnh của khách hàng như album ảnh cưới, ảnh bé, ảnh chụp gia đình, ảnh nghệ thuật </p>
+               </div>
+               <div class="content" id="content-5">
+                  <h2 class="content__title">Liên hệ</h2>
+                  <a href="contact.html" class="menubtn link link--carpo">Xem thêm</a>
+                  <p class="content__text"> Bạn có một thông điệp cần truyền tải, bạn cần một bộ ảnh có concept và ý nghĩa. Hãy để chúng tôi thực thi nó. </p>
+               </div>
+               <button class="close unbutton"><span class="close__cross"></span><i class="fas fa-long-arrow-alt-left"></i><span></span></button> 
+            </section>
+            <svg class="circle" vector-effect="non-scaling-stroke" width="1600" height="1600">
+               <circle vector-effect="non-scaling-stroke" cx="800" cy="800" r="330" data-svg-origin="800 800" style="transform-origin:0 0"/>
+            </svg>
+         </main>
+      </div>
+      <!--page reveal  -->
+         <div class="overlay"> 
+           <div class="images">
+   
+             <div class="img img-1"></div>
+             <div class="img img-2"></div>
+             <div class="img img-3"></div>
+             <div class="img img-4"></div>
+             <div class="img img-5"></div>
+             <div class="img img-6"></div>
+             <div class="img img-7"></div>
+             <div class="img img-8"></div>
+           </div>
+           <div class="navbar">
+             <div class="site-title">Klaver Studio</div>
+             <div class="site-icon">✴</div>
+             <div class="site-type">Base in Vietnam </div>
+           </div>
+         </div> 
+      <div class="container">
+      <div class="nav-bar" >
+         <a href="index.html" >
+            <p class="logo"> Klaver </p>
+         </a>
+         <ul>
+            <li> <a href="index.html" class="link activepage">
+               <span>Trang chủ</span>
+               </a>
+            </li>
+            <li>
+               <a href="about.html" class="link link--metis">
+                  <spa> Giới thiệu </spa>
+               </a>
+            </li>
+            <li> <a href="gallery.html"  class="link link--metis">
+               <span>Thư viện</span>
+               </a>
+               </a>
+            </li>
+            <li> <a href="contact.html"  class="link link--metis">
+               <span>Liên hệ</span>
+               </a>
+               </a>
+            </li>
+         </ul>
+      </div>
+      <section id="sec1">
+      <div class="wrapper">
+         <div class="line">
+            <span style="font-size: 150px"> KlaverStudio </span>
+         </div>
+         <div class="line ">
+            <span style="font-style: italic; color:#e84e77; margin-top: 10px;"> PHOTOGRAPHY   </span> 
+         </div>
+         <div class="line ">
+            <span> Studio tại Việt Nam </span>
+         </div>
+         <div class="emblem">Klaver Studio * Photography * </div>
+      </div>
+      <section id="section2">
+         <hr class="main-hr">
+         <p class="title"> Klaver Studio là thương hiệu đi đầu trong lĩnh vực Photography dành cho tất cả đối tượng khách hàng cá nhân và doanh nghiệp.  </p>
+         <p class="s2-content">
+         <p class="content-text" data-scroll data-scroll-speed="2" data-scroll-delay="0.2"> Mỗi bức ảnh đều mang một thông điệp, bằng sự thấu hiểu người dùng, bằng kiến thức nhiếp ảnh, nghệ thuật ánh sáng và sắp xếp. Chúng tôi tự hào mang đến những sản phẩm là những bức ảnh chất lượng, được thực hiện bằng sự tận tâm của đội ngũ nhân sự trẻ trung, năng động, nhiệt huyết và sáng tạo không ngừng nghỉ. <br>
+            “Hình ảnh là yếu tố có sức cuốn hút và ghi lại rõ ràng nhất cảm xúc, khoảnh khắc. Klaver Studio luôn hướng đến những hình ảnh đầy xúc cảm, lưu giữ trọn vẹn kỷ niệm trong cuộc đời mỗi người”. 
+         </p>
+         <div class="portfolio-item s2-img" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">
+            <div class="portfolio-thumb">
+               <a href="about.html"> <img src="https://pbs.twimg.com/media/E5_WX6gVUAI9bwd?format=jpg&name=900x900" /></a>
+            </div>
+            <p data-scroll data-scroll-speed="1" > KLAVER  </p>
+         </div>
+      </section>
+      <hr class="main-hr">
+      <section id="section3">
+         <p class="tit" data-scroll data-scroll-speed="1">Hàng Nghìn Khách Hàng Đã Chọn  KLAVER  Bởi</p>
+         <div class="acc-toggle" data-collapse="">
+            <div class="acc-block">
+               <div class="acc-no">(01)</div>
+               <div class="acc-title">Dịch vụ đẳng cấp</div>
+               <div class="acc-toggle-icon">
+                  <ion-icon name="add-outline"></ion-icon>
+               </div>
+            </div>
+         </div>
+         <ul>
+            <li>
+               Dịch vụ chụp ảnh cưới của Klaver Studio luôn uy tín, đặt lợi ích khách hàng lên hàng đầu
+            </li>
+            <li> chúng tôi luôn làm hài lòng mọi khách hàng dù khó tính nhất</li>
+         </ul>
+         <div class="acc-toggle" data-collapse="">
+            <div class="acc-block">
+               <div class="acc-no">(02)</div>
+               <div class="acc-title">Chất lượng sản phẩm tốt nhất</div>
+               <div class="acc-toggle-icon">
+                  <ion-icon name="add-outline"></ion-icon>
+               </div>
+            </div>
+         </div>
+         <ul>
+            <li>
+               Với mỗi Album sau khi chụp xong cho mỗi khách hàng đều được đội ngũ kĩ thuật 
+            </li>
+            <li>của Klaver Studio design tỉ mỉ từng trang album đem đến cho khách hàng</li>
+         </ul>
+         <div class="acc-toggle" data-collapse="">
+            <div class="acc-block">
+               <div class="acc-no">(03)</div>
+               <div class="acc-title">Ekip chụp, trang điểm chuyên nghiệp</div>
+               <div class="acc-toggle-icon">
+                  <ion-icon name="add-outline"></ion-icon>
+               </div>
+            </div>
+         </div>
+         <ul>
+            <li>
+               Với đội ngũ trang điểm và chụp kinh nghiệm lâu năm,
+            </li>
+            <li>thì mỗi khách hàng của Klaver Studio sẽ trở nên đẹp và lộng lẫy nhất trong những ngày trọng đại</li>
+         </ul>
+         <div class="acc-toggle" data-collapse="">
+            <div class="acc-block">
+               <div class="acc-no">(04)</div>
+               <div class="acc-title">Khuyến mãi hấp dẫn</div>
+               <div class="acc-toggle-icon">
+                  <ion-icon name="add-outline"></ion-icon>
+               </div>
+            </div>
+         </div>
+         <ul>
+            <li>
+               Với những khuyến mãi hấp dẫn từng thời điểm, 
+            </li>
+            <li>với nhiều gói chụp phong phú nhiều địa điểm chụp đẹp.</li>
+         </ul>
+      </section>
+      <section id="sec4">
+         <main>
+         <div class="frame" data-scroll data-scroll-speed="1" data-scroll-delay="0.2"  >
+            <div class="frame__indicator " > </div>
+         </div>
+         <div class="strip-outer"  data-scroll data-scroll-speed="1">
+            <p class="drag">( Kéo giữ ) </p>
+            <div class="strip-inner">
+               <div class="draggable"></div>
+               <div class="strip" >
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-m">
+                        <div class="img-inner" style="background-image:url(https://images.unsplash.com/photo-1611093791822-15086535830b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cGhvdG9ncmFwaHklMjBzdHVkaW98ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>01</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-xl">
+                        <div class="img-inner" style="background-image:url(https://i.pinimg.com/564x/79/38/21/793821031c3d8a26b175d44a59198222.jpg
+                           )"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>02</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-l">
+                        <div class="img-inner" style="background-image:url(https://i.pinimg.com/564x/61/bd/69/61bd6955a1391b4ba54c3f63a9daf27d.jpg)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>03</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-s">
+                        <div class="img-inner" style="background-image:url( https://images.unsplash.com/photo-1598006640672-f0cc33c40702?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBob3RvZ3JhcGh5JTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>04</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-m">
+                        <div class="img-inner" style="background-image:url(https://images.unsplash.com/photo-1598086849618-96e025dab83c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHBob3RvZ3JhcGh5JTIwc3R1ZGlvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>05</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-s">
+                        <div class="img-inner" style="background-image:url(https://images.unsplash.com/photo-1614604858874-5354c8788d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>06</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-l">
+                        <div class="img-inner" style="background-image:url(https://i.pinimg.com/564x/73/76/6d/73766dcf019250f29e2116fa0bd8e580.jpg)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>07</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-s">
+                        <div class="img-inner" style="background-image:url(https://i.pinimg.com/564x/ad/5f/69/ad5f6903da1260d229ac95740720c3c6.jpg)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>08</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer">
+                        <div class="img-inner" style="background-image:url(https://images.unsplash.com/photo-1552793494-111afe03d0ca?ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60)"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span>09</span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-s">
+                        <div class="img-inner"></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span></span></a><span class="strip__item-plus"></span></span>
+                  </div>
+                  <div class="strip__item">
+                     <div class="img-outer img-outer--size-xl">
+                        <div class="img-inner" ></div>
+                     </div>
+                     <span class="strip__item-number"><a class="strip__item-link"><span></span></a><span class="strip__item-plus"></span></span>
+                  </div>
+               </div>
+               <!--/strip-->
+            </div>
+            <!--/strip-inner-->
+            <div class="strip-cover">
+               <h2 class="strip-cover__title">KLAVER </h2>
+               <span class="strip-cover__subtitle">Ảnh studio</span>
+            </div>
+         </div>
+      </section>
+      <section id="section5" data-scroll data-scroll-speed="1" data-scroll-delay="0.2" >
+         <hr>
+         <ul class="marquee-wrap">
+            <li>
+               <ul>
+                  <li> LOTTE HOTELS & RESORTS - BELLA BRIDAL - HANOI DAEWOO HOTEL - THAI DETOX - ADAM STORE - TUXEDO - CYN GROUP - LILI </li>
+               </ul>
+            </li>
+            <li>
+               <!-- reverse line -->
+               <ul>
+                  <li> JOLI POLI WEDDING STUDIO - LOFITA TEA & COFFEE - SMTOWN - GRIDA PROJECT - STEEL WOOL - RYCE - H& ENTERTAINMENT </li>
+               </ul>
+            </li>
+         </ul>
+         <hr>
+         <p> Các đối tác mà Klaver studio từng có cơ hội hợp tác trong những năm qua. </p>
+      </section>
+      <section id="sectionPin">
+         <div class="pin-wrap">
+            <p class="project-title" data-scroll data-scroll-speed="2" data-scroll-delay="0.2">MỘT SỐ DỰ ÁN  NỔI BẬT.</p>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/d6/f9/ef/d6f9ef8538267e614c33018a2dc9cb23.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh cưới Hàn Quốc tại phim trường NEVERBLAND </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1"/>
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/a1/8d/05/a18d0553bfe2973d7a5beabd6dad6418.jpg "/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh nghệ thuật tại Studio </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                      <a href="#"> <img src="https://i.pinimg.com/564x/84/cc/ec/84ccec67df10e1dc969a5a212aa7d175.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh bé </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh hoài niệm trên cánh đồng hoa Hóc Môn </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/c2/9d/41/c29d41e746930928c1d5d3f4d3a512fb.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh nghệ thuật tại khu vườn mùa thu </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/c0/ae/35/c0ae3503a6569a750c8d9db1b885e36a.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh nhóm phong cách RETRO </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/1c/52/6a/1c526aa3f2ac5685d492ce7a6b126607.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh gia đình </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper">
+               <div class="portfolio-item">
+                  <div class="portfolio-thumb">
+                     <a href="#"> <img src="https://i.pinimg.com/564x/0a/26/bc/0a26bc3efe3aac1d9b53024db6bd9f24.jpg"/></a>
+                  </div>
+               </div>
+               <div class="project-name">
+                  <h3> Album ảnh chân dung </h3>
+                  <a href="gallery.html">
+                     <button class="button button--fenrir">
+                        <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                           <path class="progress__circle" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                           <path class="progress__path" d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" pathLength="1" />
+                        </svg>
+                        <span> Xem </span>
+                     </button>
+                  </a>
+               </div>
+               <HR class="project-hr">
+            </div>
+            <div id="wrapper" class="wrapper-text">
+               <span class="left"> KLAVER STUDIO</h4></span>
+            </div>
+      </section>
+      <div class="more">
+      <hr>
+      <div class="explore"> 
+      <h3> Khám phá thêm nhiều bộ ảnh của chúng tôi </h3> 
+      <a href="gallery.html"><button class="button button--janus" style="color:rgb(245, 231, 218);"><span> TẠI ĐÂY</span></button></a>
+      </div>
+      <hr>          
+      </div>
+      <section id="section6">
+      <div class="s6-title"> 
+      <span class="p1"> Cho thuê Studio </span>
+      <span class="p2"> ( Đặc biệt ) </span>
+      </div>
+      <div class="service">
+      <div class="s6-item">
+      <div class="s6-1"> 
+      <p class="letter mot"> S </p>
+      <p class="letter hai"> S</p>
+      <p class="letter ba"> S </p>
+      </div>
+      <div class="s6-2"> 
+      <p> Save </p>
+      <p class="explain"> Địa điểm ghi hình quen thuộc của các dự án có kinh phí tiết kiệm</p>
+      </div>
+      <div class="s6-3"> 
+      <p class="number"> 01 </p>
+      <hr>
+      </div>
+      </div>
+      <div class="s6-item">
+      <div class="s6-1"> 
+      <p class="letter mot"> C </p>
+      <p class="letter hai"> C </p>
+      <p class="letter ba"> C </p>
+      </div>
+      <div class="s6-2"> 
+      <p> Clean </p>
+      <p class="explain"> Không gian sạch sẽ, mát mẻ và dịch vụ chất lượng cao</p>
+      </div>
+      <div class="s6-3"> 
+      <p class="number"> 02 </p>
+      <hr>
+      </div>
+      </div>
+      <div class="s6-item">
+      <div class="s6-1"> 
+      <p class="letter mot"> D </p>
+      <p class="letter hai"> D </p>
+      <p class="letter ba"> D </p>
+      </div>
+      <div class="s6-2"> 
+      <p> Diversify </p>
+      <p class="explain"> Cung cấp ba không gian phòng khác nhau phù hợp với nhu cầu sản xuất của bạn </p>
+      </div>
+      <div class="s6-3"> 
+      <p class="number"> 03 </p>
+      <hr>
+      </div>
+      </div>
+      <div class="s6-item">
+      <div class="s6-1"> 
+      <p class="letter mot"> L </p>
+      <p class="letter hai"> L </p>
+      <p class="letter ba"> L </p>
+      </div>
+      <div class="s6-2"> 
+      <p> Location </p>
+      <p class="explain"> Vị trí đắc địa, gần nơi ăn uống và các khu mua sắm </p>
+      </div>
+      <div class="s6-3"> 
+      <p class="number"> 04 </p>
+      <hr>
+      </div>
+      </div>
+      </div>
+      </section>
+      <section id="sec6">
+      <main>
+      <div class="frame">
+      <nav class="slides-nav">
+      <button class="slides-nav__button slides-nav__button--prev" aria-label="Previous slide">
+      <svg><path d="M1.176 11.532a.5.5 0 00-.352.936c5.228 1.96 9.475 5.555 12.752 10.797a.5.5 0 00.848-.53c-3.39-5.424-7.81-9.163-13.248-11.203z"></path><path d="M1.176 12.468a.5.5 0 01-.352-.936C6.052 9.572 10.3 5.978 13.576.735a.5.5 0 01.848.53c-3.39 5.424-7.81 9.163-13.248 11.203z"></path><path d="M1 12.5a.5.5 0 110-1h53a.5.5 0 110 1H1z"></path></svg>
+      </button>
+      <button class="slides-nav__button slides-nav__button--next" aria-label="Next slide">
+      <svg><path d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z"></path><path d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z"></path><path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"></path></svg>
+      </button>
+      <div class="slides-nav__index">
+      <span class="slides-nav__index-current">
+      <span>1</span>
+      </span>
+      &mdash;
+      <span class="slides-nav__index-total">5</span>
+      </div>
+      </nav>
+      </div>
+      <div class="slideshow">
+      <figure class="slide slide--current">
+      <div class="slide__img-wrap"><div class="slide__img" style="background-image: url(https://i.pinimg.com/564x/ee/58/52/ee5852e7e36c90b330a5d99e1e4921b5.jpg)"></div></div>
+      <figcaption class="slide__caption">
+      <h2 class="slides__caption-headline">
+      <span class="text-row"><span>PHÒNG HULK</span></span>
+      <span class="text-row mal"> <span>Không gian lớn nhất tại Klaver Studio.<br>  Là không gian tích hợp nhiều tiện ích và chức năng.<br> Kích thước: L25 X W12 X H8</span>
+      </span>
+      </h2>
+      <a href="#" class="link link--metis slides__caption-link">
+      <span>Xem thêm</span>
+      </a>
+      </a> 
+      </figcaption>
+      </figure>
+      <figure class="slide">
+      <div class="slide__img-wrap"><div class="slide__img" style="background-image: url(https://i.pinimg.com/564x/c4/2d/67/c42d67eed2ecc1c5e39f3913a298e339.jpg)"></div></div>
+      <figcaption class="slide__caption">
+      <h2 class="slides__caption-headline">
+      <span class="text-row"><span>PHÒNG THOR</span></span>
+      <span class="text-row mal"> <span> Không gian Thor có kích thước vừa phải, có thể giúp bạn tối ưu kinh phí mà vẫn có không gian vừa đủ để sản xuất dự án. Phòng cũng được trang bị hệ thống máy lạnh để tinh thần ekip của bạn thoải mái làm việc.</span>
+      </h2>
+      <a href="#" class="link link--metis slides__caption-link">
+      <span>Xem thêm</span>
+      </a>
+      </figcaption>
+      </figure>
+      <figure class="slide">
+      <div class="slide__img-wrap"><div class="slide__img" style="background-image: url(https://i.pinimg.com/564x/5b/3a/9a/5b3a9a96cc98bb5e40e2496bfe8b9c73.jpg); background-size: cover;"></div></div>
+      <figcaption class="slide__caption">
+      <h2 class="slides__caption-headline">
+      <span class="text-row"><span>PHÒNG MAKE UP</span></span>
+      <span class="text-row mal"> <span> Phòng được trang bị hệ thống đèn chuyên biệt dành cho trang điểm, với ánh sáng chuẩn. Phòng sạch sẽ thơm tho, có máy lạnh. Phòng còn có 2 khu vực thay đồ riêng tư để bạn nhanh chóng thay trang phục ngày sau khi make up.</span>
+      </h2>
+      <a href="#" class="link link--metis slides__caption-link">
+      <span>Xem thêm</span>
+      </a>
+      </figcaption>
+      </figure>
+      <figure class="slide">
+      <div class="slide__img-wrap"><div class="slide__img" style="background-image: url(https://studio68.asia/wp-content/uploads/2019/12/Studio68-03-600x386.png)"></div></div>
+      <figcaption class="slide__caption">
+      <h2 class="slides__caption-headline">
+      <span class="text-row"><span>PHÒNG QUAN SÁT</span></span>
+      <span class="text-row mal"> <span> Ekip có thể có thể quan sát được toàn bộ không gian ghi hình lớn nhất (phòng Hulk) ở bên dưới trong suốt quá trình quay/chụp. Có máy lạnh và bộ bàn ghế salon êm ái.</span>
+      </h2>
+      <a href="#" class="link link--metis slides__caption-link">
+      <span>Xem thêm</span>
+      </a>
+      </figcaption>
+      </figure>
+      </div>
+      </main>
+      </section>
+      <div class="footer  aboutft">
+      <hr class="main-hr">
+      <div class="f1">
+      <p class="logo-f"> Klaver <br> Studio </p>
+      <p class="address"> 778/10 Nguyễn Kiệm, Phú Nhuận, TPHCM <br>  klaverstudio@gmail.com<br>1800 6325  </p>
+      <div class="totop"> 
+      <p> Lên đầu </p>
+      <div class="topicon"> 
+      <a href="#section2"><svg><path d="M53.824 11.532a.5.5 0 01.352.936c-5.228 1.96-9.475 5.555-12.752 10.797a.5.5 0 01-.848-.53c3.39-5.424 7.81-9.163 13.248-11.203z"></path><path d="M53.824 12.468a.5.5 0 00.352-.936C48.948 9.572 44.7 5.978 41.424.735a.5.5 0 00-.848.53c3.39 5.424 7.81 9.163 13.248 11.203z"></path><path d="M54 12.5a.5.5 0 100-1H1a.5.5 0 100 1h53z"></path></svg>
+      </a> </div> 
+      </div>
+      </div>
+      <hr class="main-hr">
+      <div class="contact"><p> <a href="contact.html">Liên hệ </a></p></div>
+      <hr class="main-hr">
+      <div class="f2">
+      <p> @2021</p>
+      <div class="sns">
+      <a href="https://www.facebook.com/phnga24/" target="_blank" class="link link--carpo">Facebook</a>
+      <a href="https://www.instagram.com/jadengaa/" target="_blank" class="link link--carpo">Instagram</a>
+      </a>
+      <a href="#" class="link link--carpo">Behance</a>
+      </a>
+      </div>
+      <p> By Nga Pham</p>
+      </div>
+      </div> 
+      </div>
+    <!-- slider -->
+      <script src="js/demo2.44794d1a.js"></script>
+      <!-- partial -->
+      <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+      <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script> -->
+      <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>
+      <script  src="js/script.js"></script>
+      <!-- page reveal -->
+      <script>
+         TweenMax.staggerFrom(
+           ".navbar > div",
+           0.8,
+           {
+             x: "-80",
+             opacity: 0,
+             ease: Power3.easeOut,
+             delay: 1,
+           },
+           0.08
+         );
+         
+         TweenMax.staggerFrom(
+           ".images > div",
+           0.8,
+           {
+             x: "-80",
+             opacity: 0,
+             ease: Power3.easeOut,
+             delay: 1,
+           },
+           0.08
+         );
+         
+         TweenMax.staggerTo(
+           ".navbar > div",
+           0.8,
+           {
+             x: "80",
+             opacity: 0,
+             ease: Power3.easeOut,
+             delay: 4,
+           },
+           0.04
+         );
+         
+         TweenMax.staggerTo(
+           ".images > div",
+           0.4,
+           {
+             scale: "0",
+             opacity: 0,
+             ease: Power3.easeOut,
+             delay: 4,
+           },
+           0.04
+         );
+         
+         TweenMax.to(".overlay", 1.2, {
+           top: "-100%",
+           ease: Expo.easeOut,
+           delay: 5,
+         });
+         
+         var textWrapper = document.querySelector(".header");
+         textWrapper.innerHTML = textWrapper.textContent.replace(
+           /\S/g,
+           "<span class='letter'>$&</span>"
+         );
+         
+         anime.timeline().add({
+           targets: ".header .letter",
+           translateY: [100, 0],
+           translateZ: 0,
+           easing: "easeOutExpo",
+           duration: 2000,
+           delay: (el, i) => 4800 + 40 * i,
+         });
+      </script>
+      <!-- menu -->
+      <script>
+         var t1 = new TimelineMax({ paused: true });
+         
+         t1.to(".nav-container", 1, {
+         left: 0,
+         ease: Expo.easeInOut,
+         });
+         
+         t1.staggerFrom(
+         ".menu > div",
+         0.8,
+         { y: 100, opacity: 0, ease: Expo.easeOut },
+         "0.1",
+         "-=0.4"
+         );
+         
+         t1.staggerFrom(
+         ".socials",
+         0.8,
+         { y: 100, opacity: 0, ease: Expo.easeOut },
+         "0.4",
+         "-=0.6"
+         );
+         
+         t1.reverse();
+         $(document).on("click", ".menu-open", function () {
+         t1.reversed(!t1.reversed());
+         });
+         $(document).on("click", ".menu-close", function () {
+         t1.reversed(!t1.reversed());
+         });
+      </script>
+      <!-- inner menu -->
+      <script src="js/menu.js"></script> 
+      <!-- rotate circle -->
+      <script  src="js/circle-script.js"></script>
+      <!-- aos -->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+         AOS.init();
+      </script>
+      <!-- mouse -->
+      <script>
+         var cursor = $(".cursor"),
+             follower = $(".cursor-follower");
+         
+         var posX = 0,
+             posY = 0,
+             mouseX = 0,
+             mouseY = 0;
+         
+         TweenMax.to({}, 0.016, {
+             repeat: -1,
+             onRepeat: function() {
+                 posX += (mouseX - posX) / 9;
+                 posY += (mouseY - posY) / 9;
+         
+                 TweenMax.set(follower, {
+                     css: {
+                         left: posX - 20,
+                         top: posY - 20
+                     }
+                 });
+         
+                 TweenMax.set(cursor, {
+                     css: {
+                         left: mouseX,
+                         top: mouseY
+                     }
+                 });
+             }
+         });
+         
+         $(document).on("mousemove", function(e) {
+             mouseX = e.pageX;
+             mouseY = e.pageY;
+         });
+         
+         $(".portfolio-item img").on("mouseenter", function() {
+             cursor.addClass("active");
+             follower.addClass("active");
+         });
+         
+         $(".portfolio-item img").on("mouseleave", function() {
+             cursor.removeClass("active");
+             follower.removeClass("active");
+         });
+      </script>
+      <!-- LINE REVEAL -->
+      <script>
+         const textrev = gsap.timeline();
+         
+         textrev.from(".line span", 2, {
+             y: 200,
+             ease: "power4.out",
+             delay: 5,
+             skewY: 0,
+             stagger: {
+                 amount: 0.4,
+             },
+         });
+      </script>
+   
+  
+      <!-- draggable img -->
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <script src="js/TweenMax.min.js"></script>
+      <script src="js/draggabilly.pkgd.min.js"></script>
+      <script src="js/demo.js"></script>
+      <script>
+         // Preload all the images in the page
+         imagesLoaded(document.querySelectorAll('.img-inner'), {background: true}, () => document.body.classList.remove('loading'));
+      </script>
+      <!-- accord -->
+      <script>
+         let parent = document.querySelectorAll("[data-collapse");
+         parent.forEach((element) => {
+           let clickTarget = element.querySelector("*");
+           let collapseElement = element.nextElementSibling;
+           let collapseElementChildren = collapseElement.children;
+           let tl = new TimelineMax({
+             reversed: true,
+             paused: true,
+           });
+         
+           tl.from(
+             collapseElement,
+             1.6,
+             {
+               className: "+=heightZero",
+               ease: Expo.easeInOut,
+             },
+             "open"
+           );
+           tl.staggerFrom(
+             collapseElementChildren,
+             1,
+             {
+               autoAlpha: 0,
+               y: "40%",
+               ease: Expo.easeInOut,
+             },
+             0.08,
+             "open+=.1"
+           );
+         
+           clickTarget.addEventListener("click", () => {
+             tl.reversed() ? tl.play() : tl.reverse();
+           });
+         });
+      </script>
+   </body>
+</html>
