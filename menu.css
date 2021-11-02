@@ -50,7 +50,7 @@
 	font-family: Ariom
 }
 
-.overlay:after{
+.nav-container:after{
 	animation: grain 8s steps(10) infinite;
 	background-image: url(noise.f31eb271.png);
 	content: "";
