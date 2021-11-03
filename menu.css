@@ -115,7 +115,7 @@
 	--offset: 20vw;
 	--move-initial: calc(-25% + var(--offset));
 	--move-final: calc(-50% + var(--offset));
-	font-size: 7vw;
+	font-size: 5vw;
 }
 
 .marquee {
@@ -145,7 +145,7 @@
 .menu__item-link,
 .marquee span {
 	white-space: nowrap;
-	font-size: 7vw;
+	font-size: 5vw;
 	padding: 0 1vw;
 	line-height: 1.15;
 }
@@ -175,7 +175,7 @@
 
 
 .nav-container main {
-	margin-top: 30px;
+	margin-top: 50px;
 	display: grid;
 	place-items: center;
 	grid-auto-rows: 100vh
@@ -216,9 +216,9 @@
 .menu__item {
 	/* cursor: pointer; */
 	color: #e84e77;
-	line-height: 1;
+	line-height: 1.1;
 	text-transform: uppercase;
-	font-size: 8vw;
+	font-size: 6.5vw;
 
 	will-change: transform;
 	pointer-events: none;
