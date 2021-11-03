@@ -1423,6 +1423,16 @@ hr {
 	background: url("https://i.pinimg.com/564x/42/96/da/4296da94ca13d156ecdc65299743ca9f.jpg") 50% 50% no-repeat;
 	background-size: cover;
 }
+.img-9 {
+	transform: scale(1.1);
+	background: url("https://i.pinimg.com/564x/8b/6a/ca/8b6aca2af395ad60d0aa620bfdfd98b7.jpg") 50% 50% no-repeat;
+	background-size: cover;
+}
+.img-10 {
+	transform: scale(1.2);
+	background: url("https://i.pinimg.com/564x/38/37/7f/38377fb35b2b9802f7fda7d4f3d4e2a7.jpg") 50% 50% no-repeat;
+	background-size: cover;
+}
 
 .overlay .navbar {
 	position: absolute;
@@ -1437,6 +1447,7 @@ hr {
 	letter-spacing: 2px;
 	/* font-family: Ariom; */
 	font-family: Gallery ;
+	
 }
 
 .link {
@@ -1713,7 +1724,7 @@ hr {
 
 #about1 .content__text {
 	position: absolute;
-	top: 50%;
+	top: 65%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 80%;

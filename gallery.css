@@ -46,7 +46,6 @@
     width: 200px;
     height: 300px;
     transition-timing-function: ease-out;
-    margin-top:80px
   }
   
   .imgg-1 {
@@ -82,7 +81,6 @@
   
 
 .gallery {
-    /* margin-left: 30vw ; */
 margin: 0 5vw 10vh 5vw;
     display: flex;
 
