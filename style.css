@@ -1160,17 +1160,26 @@ hr {
 }
 
 .footer {
-	margin-top: 130px;
+	/* margin-top: 130px; */
 	font-family: Ariom;
 	height: 100vh;
 	width: 100vw;
 	position: relative;
 }
-
+.navft{
+	text-align: right;
+	
+}
+.navft li{
+	margin: 5px 0
+	
+}
 .footer hr {
 	margin: 40px 6vw;
-	;
 }
+/* .mg-b {
+	margin: 5px 0 7px 0!important
+} */
 
 .footer hr:nth-child(1) {
 	margin-bottom: 70px
@@ -1179,7 +1188,6 @@ hr {
 .totop {
 	display: flex;
 	align-items: center;
-	;
 	position: relative!important;
 	top: -20px;
 }
@@ -1202,7 +1210,10 @@ hr {
 	transform: translate(-50%, -50%) rotate(270deg);
 	flex-basis: 25%;
 }
-
+.f1{
+	position: relative;
+	top:-7px;
+}
 .f1,
 .f2 {
 	display: flex;
@@ -1210,7 +1221,7 @@ hr {
 	text-transform: uppercase;
 	font-size: 15px;
 	margin: auto 6vw;
-	align-items: center;
+
 }
 
 .f1 .address {
@@ -1224,7 +1235,8 @@ hr {
 .f1 .logo-f {
 	font-size: 22px;
 	line-height: 1.2;
-	letter-spacing: 2px
+	letter-spacing: 2px;
+	margin-top: 6px
 }
 
 .contact {
