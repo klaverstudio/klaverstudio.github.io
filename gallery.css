@@ -1,18 +1,4 @@
-.go-top {
-	position: fixed;
-	bottom: 2em;
-	right: 2em;
-	text-decoration: none;
-	color: white;
-	background-color: rgba(0, 0, 0, 0.3);
-	font-size: 12px;
-	padding: 1em;
-	display: none;
-}
 
-.go-top:hover {
-	background-color: rgba(0, 0, 0, 0.6);
-}
 .headergl{
     position: relative;
 }
@@ -28,23 +14,22 @@
     line-height: 150px!important;
     mix-blend-mode: difference!important;
 	text-transform: uppercase!important;
-
+  font-family: Ariom ;
 
 }
 .gltext{
   position: absolute;
-  top: 62%;
+  top: 63%;
   left: 20%;
-  font-size: 20px;
+  font-size: 23px;
+  /* letter-spacing: 1px; */
   mix-blend-mode: difference!important;
 }
 .gltext2{
-  /* position: relative;
-  RIGHT:-220px;
-  bottom:50px; */
   position: absolute;
-  bottom:-50px;
+  bottom:-45px;
   right: 20%;
+  letter-spacing: 2px;
   font-size: 20px;
   mix-blend-mode: difference!important;
 }
@@ -119,7 +104,8 @@ margin: 0 5vw 10vh 5vw;
     font-size: 18px;
     font-family: Ariom ;
     margin: 5px;
-    padding: 10px 0;
+    /* font-family: Montserrat; */
+    padding: 8px 0;
     cursor: pointer;
     transition: 0.4s linear;
     text-transform: uppercase;
