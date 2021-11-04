@@ -1,6 +1,44 @@
 .glr{
   overflow-x: hidden!important;
 }
+.tracking-in-contract-bck {
+	-webkit-animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+ @-webkit-keyframes tracking-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px);
+              transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-contract-bck {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px);
+              transform: translateZ(400px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  
 #glheader{
   height:100vh;
   width: 100vw;
@@ -19,12 +57,13 @@ font-size: 12vw;
 text-transform: uppercase;
 }
 .gltitle p:nth-child(2){
-font-size: 1.4vw;
+font-size: 1.8vw;
+letter-spacing: 2px;
 }
 
 
 .gallery {
-margin: 0 5vw 20vh 5vw;
+margin: 10vh 5vw 20vh 5vw;
     display: flex;
    /* padding: 50px 0; */
 
