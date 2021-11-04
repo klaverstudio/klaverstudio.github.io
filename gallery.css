@@ -1,7 +1,9 @@
+.glr{
+  overflow-x: hidden!important;
+}
 #glheader{
   height:100vh;
   width: 100vw;
-  
   position: relative;
 }
 .gltitle{
@@ -14,95 +16,34 @@
 }
 .gltitle p:nth-child(1){
 font-size: 12vw;
-/* margin-top: 60px; */
-/* font-size: 150px; */
 text-transform: uppercase;
 }
 .gltitle p:nth-child(2){
 font-size: 1.4vw;
-/* margin-left:25%;
-/* text-transform: uppercase; */
-/* text-align: left */
 }
-.gltitle p:nth-child(3){
-font-size: 25px;
-/* text-transform: uppercase; */
-/* text-align: right; */
-/* margin-right: 25%; */
-}
-#trail{
-  
-    position: absolute;
-    top:0;
-    z-index: -1;
-  
-}
-.imgg {
-    position: absolute;
-    width: 200px;
-    height: 300px;
-    transition-timing-function: ease-out;
-    
-  }
-  
-  .imgg-1 {
-    background: url(https://i.pinimg.com/564x/69/25/1b/69251b71f3531c2d815661a0200122e6.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    transition-duration: 1000ms;
-   
-  }
-  
-  .imgg-2 {
-    background: url(https://i.pinimg.com/564x/02/35/d4/0235d456f8fdd2c97f6613152f56e67d.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    transition-duration: 800ms;
-   
-  }
-  
-  .imgg-3 {
-    background: url(https://i.pinimg.com/564x/1b/55/5b/1b555b7e863932f81ca36ddcdda0609b.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    transition-duration: 600ms;
-  }
-  
-  .imgg-4 {
-    background: url(https://i.pinimg.com/564x/7b/7a/ed/7b7aed43f2a2bca4a0d4082d0bd3bc38.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    transition-duration: 400ms;
-  }
-  
-  .imgg-5 {
-    background: url(https://i.pinimg.com/564x/fd/d0/ce/fdd0ced16f5df4ffbdee15c62085c244.jpg) no-repeat 50% 50%;
-    background-size: cover;
-    transition-duration: 200ms;
-  }
-  
+
 
 .gallery {
-margin: 0 5vw 10vh 5vw;
+margin: 0 5vw 20vh 5vw;
     display: flex;
    /* padding: 50px 0; */
 
 }
-.cao{height: 100vh!important;}
-.mg{
-margin-top:0;
- margin-bottom: 100px!important;
-}
 
 .gallery .stick {
-
-    flex:0.3;
-    margin-left: 30px;
+    flex:0.2;
+   text-align:left;
+   margin-top:10px;
+   margin-left: 70px;
 
 }
+
 .gallery .stick p {
     list-style: none;
     font-size: 18px;
     font-family: Ariom ;
     margin: 5px;
-    /* font-family: Montserrat; */
-    padding: 8px 0;
+    padding: 7px 0;
     cursor: pointer;
     transition: 0.4s linear;
     text-transform: uppercase;

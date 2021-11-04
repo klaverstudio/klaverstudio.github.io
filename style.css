@@ -243,7 +243,7 @@ html {
 
 .acc-block {
 	width: 100%;
-	height: 140px;
+	height: 120px;
 	display: flex;
 	justify-content: space-between;
 	padding: 40px;
@@ -1331,12 +1331,12 @@ hr {
 }
 
 .portfolio-thumb img {
-	opacity: 1;
+	opacity: 0.8;
 	transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
 	transform-origin: 90% center;
 }
 
-#wrapper .portfolio-thumb img {
+#wrapper .portfolio-itemm img {
 	height: 65vh;
 	width: 35vw;
 	object-fit: cover;
