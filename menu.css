@@ -37,7 +37,9 @@
 	color: rgb(243, 136, 4)!important;
 	z-index: 100;
 }
-
+.aboutmenu{
+	margin-top: 27vh;
+}
 .nav-container {
 	color: rgb(245, 231, 218);
 	position: fixed;
