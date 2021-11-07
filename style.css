@@ -366,15 +366,16 @@ html {
 .draggable {
 	height: 500px;
 	top: calc(50% - 250px);
-	width: 100%;
+	width: 200vw;
 	position: absolute;
 	cursor: grab;
 	z-index: 100;
 }
 
-.draggable:active {
+/* .draggable:active {
 	cursor: grabbing;
-}
+
+} */
 
 .strip {
 	height: 100%;
