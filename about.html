@@ -29,6 +29,7 @@
       <!-- project page -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+      <link rel="stylesheet" href="cta-button-with-css-tooltip/style.css">
    <body>
       <!-- mouse -->
       <div class="cursor"></div>
@@ -237,7 +238,18 @@
          <section id="mail">
             <p> Bạn <br> đang cần <br> một bộ ảnh ?</p>
             <p> Hãy để chúng tôi thực thi nó. Xin vui lòng email thông tin dự án của bạn về địa chỉ như sau: </p>
-            <p> <a style="color: #f1e4d6;" class="link link--metis"> klaverstudio@gmail.com </a></p>
+             <div class="tooltip">
+               <button class="link" onclick="copyClipboard()" onmouseout="outFunc()"> 
+                <span class="tooltiptext" id="tooltip">Sao chép mail vào clipboard?</span> 
+                <span class="cc-text">klaverstudio@gmail.com</span> 
+               </button>
+              </div>
+              
+              <label for="freeMail">
+                <input type="text" value="https://nga-ph.github.io/" id="freeMail"  aria-labelledby="freeMail">
+              </label> 
+            <!-- <p> <a style="color: #f1e4d6;" class="link link--metis"> klaverstudio@gmail.com </a></p> -->
+            
             <img src="brush-mail.svg">
          </section>
          <div class="footer">
@@ -294,6 +306,17 @@
             </div>
          </div>       
       </div>
+
+
+
+
+
+
+
+      <script  src="cta-button-with-css-tooltip/script.js"></script>
+
+
+
       <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
       <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
       <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>

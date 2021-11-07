@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - CTA button with CSS tooltip</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="tooltip">
+ <button class="link" onclick="copyClipboard()" onmouseout="outFunc()"> 
+  <span class="tooltiptext" id="tooltip">Copy mail to clipboard?</span> 
+  <span class="cc-text">Available for freelance</span> 
+ </button>
+</div>
+
+<label for="freeMail">
+  <input type="text" value="hello@andreaslitis.com" id="freeMail" aria-label="Available for freelance" aria-labelledby="freeMail">
+</label>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

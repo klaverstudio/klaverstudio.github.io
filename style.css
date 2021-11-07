@@ -1909,6 +1909,11 @@ hr {
 	right: 10vw;
 	bottom: 23vh
 }
+#mail div {
+	position: absolute;
+	right: 9vw;
+	bottom: 23vh
+}
 
 #mail img {
 	position: absolute;

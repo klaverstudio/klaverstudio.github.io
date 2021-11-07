@@ -1,0 +1,78 @@
+.tooltip button {
+    color: rgb(245, 231, 218);
+    font-family: Gallery ; 
+    border: none;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+.tooltip {
+    position: absolute;
+    display: inline-block;
+    
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 100%;
+    background-color: #202020;
+    color: #FDF0EB;
+    text-align: center;
+    padding: 15px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    opacity: 0;;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    font-family: Montserrat;
+    letter-spacing: 1px;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    animation: enter .35s ease infinite alternate;
+}
+/* @keyframes enter {
+    from { transform:translateY(2px); }
+    to { transform:translateY(-2px); }
+} */
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #202020 transparent transparent transparent;
+}
+.tooltip .link::after {
+    content: "";
+    height: 1px;
+    width: 0;
+    background-color: #202020;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+/*     https://cubic-bezier.com  gotta love Lea Verou! */
+    transition: width 500ms cubic-bezier(.27,.69,.35,1);
+}
+.tooltip .link:hover::after {
+    width: 100%;
+    
+}
+#freeMail {
+    position: absolute;
+    right: -100vw;
+}

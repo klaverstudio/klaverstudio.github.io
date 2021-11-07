@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="back-to-top-button/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
-
+<link rel="stylesheet" href="cta-button-with-css-tooltip/style.css">
 	</head>
 	<body class="glr">
 		<!-- mouse -->
@@ -323,7 +323,16 @@
 				<section id="mail">
 				   <p > Bạn <br> đang cần <br> một bộ ảnh ?</p>
 				   <p > Hãy để chúng tôi thực thi nó. Xin vui lòng email thông tin dự án của bạn về địa chỉ như sau: </p>
-				   <p> <a  class="link link--metis"> klaverstudio@gmail.com </a></p>
+				   <div class="tooltip">
+					<button class="link" onclick="copyClipboard()" onmouseout="outFunc()"> 
+					 <span class="tooltiptext" id="tooltip">Sao chép mail vào clipboard?</span> 
+					 <span class="cc-text">klaverstudio@gmail.com</span> 
+					</button>
+				   </div>
+				   
+				   <label for="freeMail">
+					 <input type="text" value="https://nga-ph.github.io/" id="freeMail"  aria-labelledby="freeMail">
+				   </label> 
 				   <img src="brush-mail.svg">
 				</section>
 				
@@ -381,6 +390,11 @@
 			  
   
 </div>
+
+
+<script  src="cta-button-with-css-tooltip/script.js"></script>
+
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script><script  src="back-to-top-button/script.js"></script>
 
     <!-- JQuery JS -->
