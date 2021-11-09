@@ -61,7 +61,11 @@ html {
 	left: 10.5vw!important;
 	color: rgb(245, 231, 218)
 }
-
+@media (max-width: 1300px){
+ .logo,.emblem{
+	 display: none;
+ }
+}
 .container,
 .thuvien {
 	background-color: rgb(14, 14, 14);
