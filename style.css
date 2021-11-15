@@ -1332,6 +1332,7 @@ hr {
 .portfolio-thumb {
 	overflow: hidden;
 	transition: all 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+
 }
 
 .portfolio-thumb img {
@@ -1342,7 +1343,7 @@ hr {
 
 #wrapper .portfolio-itemm img {
 	height: 65vh;
-	width: 35vw;
+	width: 38vw;
 	object-fit: cover;
 }
 
